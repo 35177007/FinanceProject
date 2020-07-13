@@ -552,7 +552,7 @@
                     btnClass: 'btn-primary',
                     action: function () {
                         $.ajax({
-                            url: "/user/deleteUserById/" + id,
+                            url: "user/deleteUserById/" + id,
                             type: "DELETE",
                             success: function (result) {
                                 if (result.code === 100) {

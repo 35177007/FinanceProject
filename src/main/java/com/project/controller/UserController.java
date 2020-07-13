@@ -9,6 +9,7 @@ import com.project.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -54,6 +55,16 @@ public class UserController {
         if(i == 1){
             return Msg.success();
         }else {
+            return Msg.fail();
+        }
+    }
+    @RequestMapping("/user/deleteUserById/{id}")
+    @ResponseBody
+    public Msg deleteUserById(@PathVariable("id") Integer id){
+        int i = userServiceImpl.deleteUser(id);
+        if(i == 1){
+            return  Msg.success();
+        }else{
             return Msg.fail();
         }
     }

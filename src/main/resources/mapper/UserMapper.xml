@@ -10,4 +10,7 @@
     <insert id="addUser" parameterType="com.project.pojo.User">
        insert into user(username,password,realname,phone,email) values(#{username},#{password},#{realname},#{phone},#{email})
     </insert>
+    <delete id="deleteUser" parameterType="Integer">
+        delete from user where id = #{id}
+    </delete>
 </mapper>
