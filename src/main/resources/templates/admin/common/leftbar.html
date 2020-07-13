@@ -44,7 +44,7 @@
                         <li shiro:hasPermission="admin:fundProduct" th:class="${activeUrl2=='fundproductActive'?'active':''}"><a
                                 th:href="@{/admin/finance/toFundProduct.html}">基金理财</a></li>
                         <li shiro:hasPermission="admin:bank" th:class="${activeUrl2=='bankctive'?'active':''}"><a
-                                th:href="@{/admin/finance/toBank.html}">精选银行</a></li>
+                                th:href="@{/admin/finance/toBank}">精选银行</a></li>
                     </ul>
                 </li>
                 <li shiro:hasPermission="admin:permission" class="nav-item nav-item-has-subnav"
