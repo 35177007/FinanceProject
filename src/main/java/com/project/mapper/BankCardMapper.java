@@ -10,14 +10,13 @@ import java.util.List;
 public interface BankCardMapper {
     public List<BankCard> selectBankCardAll();
 
-//    public int addUser(User user);
 //
 //
-//    public User selectUserById(Integer id);
+    public BankCard selectBankCardById(Integer id);
 //
 //
-//    public int updateUser(User user);
+    public int updateBankCard(BankCard bankCard);
 //
 //
-//    public int deleteUser(Integer id);
+    public int deleteBankCard(Integer id);
 }

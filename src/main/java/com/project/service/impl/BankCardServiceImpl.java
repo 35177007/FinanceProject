@@ -15,4 +15,19 @@ public class BankCardServiceImpl implements BankCardService {
     public List<BankCard> selectBankCardAll() {
         return bankCardMapper.selectBankCardAll();
     }
+
+    @Override
+    public int deleteBankCard(Integer id) {
+        return bankCardMapper.deleteBankCard(id);
+    }
+
+    @Override
+    public BankCard selectBankCardById(Integer id) {
+        return bankCardMapper.selectBankCardById(id);
+    }
+
+    @Override
+    public int updateBankCard(BankCard bankCard) {
+        return bankCardMapper.updateBankCard(bankCard);
+    }
 }

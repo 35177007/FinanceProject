@@ -7,4 +7,16 @@
     <select id="selectBankCardAll" resultType="com.project.pojo.BankCard">
         select username,cardNum,type,userId,bankcard.id id,cardBank from user,bankcard WHERE user.id=bankcard.userId
     </select>
+
+    <delete id="deleteBankCard" parameterType="Integer">
+        delete from bankcard where id = #{id}
+    </delete>
+
+    <select id = "selectBankCardById" parameterType="Integer" resultType="com.project.pojo.BankCard">
+        select username,cardNum,type,userId,bankCard.id id,cardBank from user,bankcard WHERE  bankcard.id = #{bankcard.id} and user.id=bankcard.userId
+    </select>
+
+    <update id="updateBankCard" parameterType="com.project.pojo.BankCard" >
+        update bankcard set cardBank = #{cardBank},type = #{type},cardnum = #{cardNum} where id = #{id}
+    </update>
 </mapper>
