@@ -451,7 +451,7 @@
     //根据id查出用户信息并显示
     function getUserInfo(id) {
         $.ajax({
-            url: "/user/getUserById/" + id,
+            url: "user/getUserById/" + id,
             type: "GET",
             success: function (result) {
                 var user = result.extend.user;
@@ -519,7 +519,7 @@
 
         //2、发送ajax请求保存更新的员工数据
         $.ajax({
-            url: "/user/updateUserProfile/" + $(this).attr("update-id"),
+            url: "user/updateUserProfile/" + $(this).attr("update-id"),
             type: "PUT",
             data: $("#userUpdateModal form").serialize(),
             success: function (result) {

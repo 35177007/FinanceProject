@@ -58,6 +58,14 @@ public class UserController {
             return Msg.fail();
         }
     }
+
+    @RequestMapping("/user/getUserById/{id}")
+    @ResponseBody
+    public Msg getUserInfoById(@PathVariable("id") Integer id){
+        User user = userServiceImpl.selectUserById(id);
+        return Msg.success().add("user",user);
+    }
+
     @RequestMapping("/user/deleteUserById/{id}")
     @ResponseBody
     public Msg deleteUserById(@PathVariable("id") Integer id){
@@ -65,6 +73,18 @@ public class UserController {
         if(i == 1){
             return  Msg.success();
         }else{
+            return Msg.fail();
+        }
+    }
+
+    @RequestMapping("/user/updateUserProfile/{id}")
+    @ResponseBody
+    public Msg updateUserProfile(User user){
+        int i = userServiceImpl.updateUser(user);
+        if (i == 1){
+            return Msg.success();
+        }
+        else{
             return Msg.fail();
         }
     }
