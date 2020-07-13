@@ -415,7 +415,7 @@
 
         //2、发送ajax请求保存用户
         $.ajax({
-            url: "/user/addUser",
+            url: "user/addUser",
             type: "POST",
             data: $("#userAddModal form").serialize(),
             success: function (result) {

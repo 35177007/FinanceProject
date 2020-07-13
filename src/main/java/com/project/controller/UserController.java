@@ -2,6 +2,7 @@ package com.project.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.project.common.Msg;
 import com.project.pojo.User;
 import com.project.service.UserService;
 import com.project.service.impl.UserServiceImpl;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -42,6 +44,18 @@ public class UserController {
         model.addAttribute("username","username");
 
         return "admin/userinfo/userinfo";
+    }
+
+    @RequestMapping("/user/addUser")
+    @ResponseBody//加入这个注解之后如果返回字符串 不再返回视图解析  而是返回返回值类型的数据
+    public Msg insertUser(User user){
+        System.out.println(user.getEmail());
+        int i = userServiceImpl.addUser(user);
+        if(i == 1){
+            return Msg.success();
+        }else {
+            return Msg.fail();
+        }
     }
 
 }
