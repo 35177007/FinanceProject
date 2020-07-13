@@ -8,6 +8,18 @@ public class BankCard {
     private String username;
     private Integer userId;
 
+    @Override
+    public String toString() {
+        return "BankCard{" +
+                "id=" + id +
+                ", cardBank='" + cardBank + '\'' +
+                ", type=" + type +
+                ", cardNum='" + cardNum + '\'' +
+                ", username='" + username + '\'' +
+                ", userId=" + userId +
+                '}';
+    }
+
     public Integer getId() {
         return id;
     }

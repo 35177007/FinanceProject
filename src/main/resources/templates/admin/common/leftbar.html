@@ -26,7 +26,7 @@
                         <li shiro:hasPermission="admin:userInfoElse" th:class="${activeUrl2=='userInfoActive'?'active':''}"><a
                                 th:href="@{/admin/userinfo}">用户信息</a></li>
                         <li shiro:hasPermission="admin:bankCard" th:class="${activeUrl2=='bankcardActive'?'active':''}"><a
-                                th:href="@{/admin/userinfo/toBankCard.html}">银行卡</a></li>
+                                th:href="@{/admin/userinfo/toBankCard}">银行卡</a></li>
                         <li shiro:hasPermission="admin:reputation" th:class="${activeUrl2=='reputationActive'?'active':''}"><a
                                 th:href="@{/admin/userinfo/toReputation.html}">个人征信</a></li>
                     </ul>
