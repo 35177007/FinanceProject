@@ -16,7 +16,7 @@
         <nav class="sidebar-main">
             <ul class="nav nav-drawer">
                 <li class="nav-item" th:class="${activeUrl=='indexActive'?'nav-item active':'nav-item'}"><a
-                        th:href="@{/admin/index.html}"><i
+                        th:href="@{/admin/main}"><i
                         class="mdi mdi-home"></i>系统首页</a></li>
                 <li shiro:hasPermission="admin:userInfo" class="nav-item nav-item-has-subnav"
                     th:class="${activeUrl1=='userInfoActive'?'nav-item nav-item-has-subnav active open':'nav-item nav-item-has-subnav'}">
@@ -36,13 +36,13 @@
                 ><a href="javascript:void(0)"><i class="mdi mdi-skype-business"></i>理财产品管理</a>
                     <ul class="nav nav-subnav">
                         <li shiro:hasPermission="admin:changeMoney" th:class="${activeUrl2=='changemoneyActive'?'active':''}"><a
-                                th:href="@{/admin/finance/toChangeMoney.html}">零钱理财</a></li>
+                                th:href="@{/admin/finance/toChangeMoney}">零钱理财</a></li>
                         <li shiro:hasPermission="admin:payMoney" th:class="${activeUrl2=='paymoneyActive'?'active':''}"><a
-                                th:href="@{/admin/finance/toPayMoney.html}">工资理财</a></li>
+                                th:href="@{/admin/finance/toPayMoney}">工资理财</a></li>
                         <li shiro:hasPermission="admin:termFinancial" th:class="${activeUrl2=='termfinancialActive'?'active':''}"><a
-                                th:href="@{/admin/finance/toTermFinancial.html}">期限理财</a></li>
+                                th:href="@{/admin/finance/toTermFinancial}">期限理财</a></li>
                         <li shiro:hasPermission="admin:fundProduct" th:class="${activeUrl2=='fundproductActive'?'active':''}"><a
-                                th:href="@{/admin/finance/toFundProduct.html}">基金理财</a></li>
+                                th:href="@{/admin/finance/toFundProduct}">基金理财</a></li>
                         <li shiro:hasPermission="admin:bank" th:class="${activeUrl2=='bankctive'?'active':''}"><a
                                 th:href="@{/admin/finance/toBank}">精选银行</a></li>
                     </ul>

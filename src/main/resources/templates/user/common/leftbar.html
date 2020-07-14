@@ -11,13 +11,13 @@
 <aside class="lyear-layout-sidebar" id="leftbaraside">
     <div id="logo" class="sidebar-header">
         <a class="navbar-brand" style="font-size: 20px"
-           th:href="@{/user/index.html}">个人理财系统</a>
+           th:href="@{/user/main}">个人理财系统</a>
     </div>
     <div class="lyear-layout-sidebar-scroll">
         <nav class="sidebar-main">
             <ul class="nav nav-drawer">
                 <li class="nav-item" th:class="${activeUrl=='indexActive'?'nav-item active':'nav-item'}"><a
-                        th:href="@{/user/index.html}"><i
+                        th:href="@{/user/main}"><i
                         class="mdi mdi-home"></i>系统首页</a></li>
                 <li shiro:hasPermission="user:finance" class="nav-item nav-item-has-subnav"
                     th:class="${activeUrl1=='financeActive'?'nav-item nav-item-has-subnav active open':'nav-item nav-item-has-subnav'}">
@@ -33,7 +33,7 @@
                         <li shiro:hasPermission="user:fundProduct" th:class="${activeUrl2=='fundProductActive'?'active':''}"><a
                                 th:href="@{/user/finance/toFundProduct.html}">基金理财</a></li>
                         <li shiro:hasPermission="user:bank" th:class="${activeUrl2=='bankActive'?'active':''}"><a
-                                th:href="@{/user/finance/toBank.html}">银行推荐</a></li>
+                                th:href="@{/user/finance/toBank}">银行推荐</a></li>
                     </ul>
                 </li>
                 <li shiro:hasPermission="user:tools" class="nav-item nav-item-has-subnav"
