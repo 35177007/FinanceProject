@@ -62,9 +62,9 @@
                 ><a href="javascript:void(0)"><i class="mdi mdi-comment-text"></i>网贷管理</a>
                     <ul class="nav nav-subnav">
                         <li shiro:hasPermission="admin:loanExam" th:class="${activeUrl2=='loanexamActive'?'active':''}"><a
-                                th:href="@{/admin/loan/toLoanexam.html}">网贷审核</a></li>
+                                th:href="@{/admin/loan/toLoanexam}">网贷审核</a></li>
                         <li shiro:hasPermission="admin:loanInfo" th:class="${activeUrl2=='loaninfoActive'?'active':''}"><a
-                                th:href="@{/admin/loan/toLoaninfo.html}">网贷信息</a></li>
+                                th:href="@{/admin/loan/toLoaninfo}">网贷信息</a></li>
                     </ul>
                 </li>
             </ul>

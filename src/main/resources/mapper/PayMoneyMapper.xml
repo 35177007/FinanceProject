@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.PayMoneyMapper">
+
+    <select id="selectPayMoneyAll" resultType="com.project.pojo.PayMoney">
+        select * from pay_money
+    </select>
+
+    <insert id="addPayMoney" parameterType="com.project.pojo.PayMoney">
+        insert into pay_money(type,monthMoney,autoInto,invesTerm) values (#{type},#{monthMoney},#{autoInto},#{invesTerm})
+    </insert>
+
+    <select id="selectPayMoneyById" parameterType="Integer" resultType="com.project.pojo.PayMoney">
+        select * from pay_money where id = #{id}
+    </select>
+
+    <update id="updatePayMoney" parameterType="com.project.pojo.PayMoney">
+        update pay_money set type = #{type},monthMoney = #{monthMoney},autoInto = #{autoInto},invesTerm = #{invesTerm} where id = #{id}
+    </update>
+
+    <delete id="deletePayMoney" parameterType="Integer">
+        delete from pay_money where id = #{id}
+    </delete>
+</mapper>

@@ -46,7 +46,7 @@ public class UserController {
     @RequestMapping("/user/addUser")
     @ResponseBody//加入这个注解之后如果返回字符串 不再返回视图解析  而是返回返回值类型的数据
     public Msg insertUser(User user){
-        System.out.println(user.getEmail());
+
         int i = userServiceImpl.addUser(user);
         if(i == 1){
             return Msg.success();

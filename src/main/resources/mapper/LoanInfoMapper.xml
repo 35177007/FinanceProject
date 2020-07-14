@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.LoanInfoMapper">
+    <select id="selectLoanInfoAll" resultType="com.project.pojo.LoanInfo">
+        select user.id id,username,realname,password,IDcard,phone,email,amount,term,loanStatus from user,loan where user.id=loanId
+    </select>
+    <insert id="insertLoadInfo" parameterType="com.project.pojo.Info">
+        insert into info(sendId,receiveId,title,createTime,infoDesc,status) values (#{sendId},#{receiveId},#{title},#{createTime},#{infoDesc},#{status})
+    </insert>
+</mapper>

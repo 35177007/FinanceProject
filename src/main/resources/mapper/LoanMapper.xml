@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.LoanMapper">
+    <select id="selectLoanAll" resultType="com.project.pojo.Loan">
+        select username,reputation,term,amount,loan.id id,loanTime,applyStatus,loanStatus,loanId,rate,examineId from user,loan where user.id=loanId
+    </select>
+    <update id="passApplyStatus" parameterType="com.project.pojo.Loan">
+        update loan set examineId=#{examineId},applyStatus=2 where id=#{id}
+    </update>
+    <update id="notPassapplyStatus" parameterType="com.project.pojo.Loan">
+        update loan set examineId=#{examineId},applyStatus=1 where id=#{id}
+    </update>
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.TermFinancialMapper">
+
+    <select id="selectTermFinancialAll" resultType="com.project.pojo.TermFinancial">
+        select * from term_financial
+    </select>
+
+    <insert id="addTermFinancial" parameterType="com.project.pojo.TermFinancial">
+        insert into term_financial(name,leastMoney,profit,annualIncome,invesTerm) values (#{name},#{leastMoney},#{profit},#{annualIncome},#{invesTerm})
+    </insert>
+
+    <select id="selectTermFinancialById" parameterType="Integer" resultType="com.project.pojo.TermFinancial">
+        select * from term_financial where id = #{id}
+    </select>
+
+    <update id="updateTermFinancial" parameterType="com.project.pojo.TermFinancial">
+        update term_financial set name = #{name},leastMoney = #{leastMoney},profit = #{profit},annualIncome = #{annualIncome},invesTerm = #{invesTerm} where id = #{id}
+    </update>
+
+    <delete id="deleteTermFinancial" parameterType="Integer">
+        delete from term_financial where id = #{id}
+    </delete>
+</mapper>

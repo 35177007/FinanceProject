@@ -13,14 +13,28 @@ public class MyInterceptor implements HandlerInterceptor{
         Object user = request.getSession().getAttribute("user");
         Object admin = request.getSession().getAttribute("admin");
 
-        if ((user != null)||(admin != null)){
-            return true;
-        }else{
+        String servletPath = request.getServletPath();
+        if (servletPath.startsWith("/admin")) {
+            if ((admin != null)) {
+                return true;
+            } else {
 
-            response.sendRedirect("/");
-            return false;
+                response.sendRedirect("/");
+                return false;
+            }
         }
+        if (servletPath.startsWith("/user")){
+            if ((user != null)) {
+                return true;
+            } else {
+
+                response.sendRedirect("/");
+                return false;
+            }
+        }
+        return true;
     }
+
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {
