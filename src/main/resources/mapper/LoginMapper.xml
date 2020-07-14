@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.LoginMapper">
+    <select id="selectAdminByUserName" resultType="com.project.pojo.Admin" parameterType="String">
+        select * from admin where username = #{username}
+    </select>
+    <select id="selectUserByUserName" resultType="com.project.pojo.User" parameterType="String">
+        select * from user where username = #{username}
+    </select>
+    <select id="adminLogin" parameterType="com.project.pojo.Admin" resultType="com.project.pojo.Admin">
+        select * from  admin where username = #{username} and  password = #{password}
+    </select>
+    <select id="userLogin" parameterType="com.project.pojo.User" resultType="com.project.pojo.User">
+        select * from  user where username = #{username} and  password = #{password}
+    </select>
+    <update id="setUserStatus" parameterType="com.project.pojo.User">
+        update user set status=1 where username = #{username} and  password = #{password}
+    </update>
+    <update id="setAdminStatus" parameterType="com.project.pojo.Admin">
+        update admin set status=1 where username = #{username} and  password = #{password}
+    </update>
+</mapper>

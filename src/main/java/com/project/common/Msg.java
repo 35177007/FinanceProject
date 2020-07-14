@@ -1,5 +1,7 @@
 package com.project.common;
 
+import lombok.Data;
+
 import java.util.HashMap;
 import java.util.Map;
 
