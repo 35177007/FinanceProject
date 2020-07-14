@@ -53,18 +53,18 @@ public class LoginController {
         Admin admin = new Admin();
         admin.setUsername(username);
         admin.setPassword(password);
-        Admin admin1 = loginService.adminLogin(admin);
-        if(admin1 != null ){
-            request.getSession().setAttribute("username",admin.getUsername());
+        Admin loginAdmin = loginService.adminLogin(admin);
+        if(loginAdmin != null ){
+            request.getSession().setAttribute("admin",loginAdmin);
             loginService.setAdminStatus(admin);
             return Msg.success().add("url","/admin/main");
         }
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
-        User user1 = loginService.userLogin(user);
-        if(user1 != null ){
-            request.getSession().setAttribute("username",user.getUsername());
+        User loginUser = loginService.userLogin(user);
+        if(loginUser != null ){
+            request.getSession().setAttribute("user",loginUser);
             loginService.setUserStatus(user);
             return Msg.success().add("url","/user/main");
         }

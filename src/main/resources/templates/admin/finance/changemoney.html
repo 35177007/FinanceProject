@@ -579,7 +579,7 @@
                     setTimeout(function () {
                         var pageNum = [[${finacnePageInfo.pageNum}]];
                         var pageSize = [[${finacnePageInfo.pageSize}]];
-                        location.href = "/admin/finance/toChangeMoney.html?pageNum=" + pageNum + "&pageSize=" + pageSize;
+                        location.href = "/admin/finance/toChangeMoney?pageNum=" + pageNum + "&pageSize=" + pageSize;
                     }, 1000);
                 } else {
                     $.alert('零钱理财产品信息修改失败！');
@@ -610,7 +610,7 @@
                                     setTimeout(function () {
                                         var pageNum = [[${finacnePageInfo.pageNum}]];
                                         var pageSize = [[${finacnePageInfo.pageSize}]];
-                                        location.href = "/admin/finance/toChangeMoney.html?pageNum=" + pageNum + "&pageSize=" + pageSize;
+                                        location.href = "/admin/finance/toChangeMoney?pageNum=" + pageNum + "&pageSize=" + pageSize;
                                     }, 1000);
                                 } else {
                                     $.alert('删除该零钱理财产品失败!');

@@ -12,4 +12,16 @@
     <insert id="addChangeMoney" parameterType="com.project.pojo.ChangeMoney">
         insert into change_money(name,annualIncome,peiIncome,invesMoney,invesTerm) values (#{name},#{annualIncome},#{peiIncome},#{invesMoney},#{invesTerm})
     </insert>
+
+    <select id="selectChangeMoneyById" parameterType="Integer" resultType="com.project.pojo.ChangeMoney">
+        select * from change_money where id = #{id}
+    </select>
+
+    <update id="updateChangeMoney" parameterType="com.project.pojo.ChangeMoney">
+        update change_money set name = #{name},annualIncome = #{annualIncome},peiIncome = #{peiIncome},invesMoney = #{invesMoney},invesTerm = #{invesTerm} where id = #{id}
+    </update>
+
+    <delete id="deleteChangeMoney" parameterType="Integer">
+        delete from change_money where id = #{id}
+    </delete>
 </mapper>

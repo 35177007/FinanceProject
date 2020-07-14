@@ -3,9 +3,8 @@ package com.project.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.project.common.Msg;
-import com.project.pojo.User;
-import com.project.service.UserService;
-import com.project.service.impl.UserServiceImpl;
+import com.project.pojo.Bank;
+import com.project.service.impl.BankServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,36 +17,32 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/admin")
-public class UserController {
+public class BankController {
     @Autowired
-    private UserServiceImpl userServiceImpl;
+    private BankServiceImpl bankService;
 
-    @RequestMapping("/userinfo")
-    public String selectUserAll(@RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
+    @RequestMapping("/finance/toBank")
+    public String selectBankAll(@RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
                                 @RequestParam(value = "pageSize",defaultValue = "5") Integer pageSize, Model model){
-
-
         //引入分页信息
         //首先引入PageHelper插件
         PageHelper.startPage(pageNum,pageSize);
-        List<User> list = userServiceImpl.selectUserAll();
+        List<Bank> financeList = bankService.selectBankAll();
         //PageInfo封装分页信息
-        PageInfo<User> pageInfo = new PageInfo<User>(list);
-        model.addAttribute("userPageInfo",pageInfo);
-        model.addAttribute("list",list);
+        PageInfo<Bank> pageInfo = new PageInfo<Bank>(financeList);
+        model.addAttribute("financePageInfo",pageInfo);
+        model.addAttribute("financeList",financeList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
+        model.addAttribute("activeUrl","BankInfoActive");
+        model.addAttribute("activeUrl2","BankInfoActive");
 
-
-        return "admin/userinfo/userinfo";
+        return "admin/finance/bank";
     }
 
-    @RequestMapping("/user/addUser")
+    @RequestMapping("/addBank")
     @ResponseBody//加入这个注解之后如果返回字符串 不再返回视图解析  而是返回返回值类型的数据
-    public Msg insertUser(User user){
-        System.out.println(user.getEmail());
-        int i = userServiceImpl.addUser(user);
+    public Msg insertBank(Bank bank){
+        int i = bankService.addBank(bank);
         if(i == 1){
             return Msg.success();
         }else {
@@ -55,17 +50,17 @@ public class UserController {
         }
     }
 
-    @RequestMapping("/user/getUserById/{id}")
+    @RequestMapping("/getBankInfoById/{id}")
     @ResponseBody
-    public Msg getUserInfoById(@PathVariable("id") Integer id){
-        User user = userServiceImpl.selectUserById(id);
-        return Msg.success().add("user",user);
+    public Msg getBankInfoById(@PathVariable("id") Integer id){
+        Bank bank = bankService.selectBankById(id);
+        return Msg.success().add("bank",bank);
     }
 
-    @RequestMapping("/user/deleteUserById/{id}")
+    @RequestMapping("/deleteBankById/{id}")
     @ResponseBody
-    public Msg deleteUserById(@PathVariable("id") Integer id){
-        int i = userServiceImpl.deleteUser(id);
+    public Msg deleteBankById(@PathVariable("id") Integer id){
+        int i = bankService.deleteBank(id);
         if(i == 1){
             return  Msg.success();
         }else{
@@ -73,10 +68,10 @@ public class UserController {
         }
     }
 
-    @RequestMapping("/user/updateUserProfile/{id}")
+    @RequestMapping("/updateBank/{id}")
     @ResponseBody
-    public Msg updateUserProfile(User user){
-        int i = userServiceImpl.updateUser(user);
+    public Msg updateBankProfile(Bank bank){
+        int i = bankService.updateBank(bank);
         if (i == 1){
             return Msg.success();
         }

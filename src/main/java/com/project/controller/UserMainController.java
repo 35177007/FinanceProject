@@ -25,10 +25,8 @@ public class UserMainController {
         model.addAttribute("activeUrl","indexActive");
         model.addAttribute("activeUrl","userInfoActive");
         model.addAttribute("activeUrl2","userInfoActive");
-        model.addAttribute("username", "username");
-//        System.out.println(newsList);
-//        model.addAttribute("title","title");
-//        model.addAttribute("createtime","createTime")
+
+
         return "user/main";
     }
 

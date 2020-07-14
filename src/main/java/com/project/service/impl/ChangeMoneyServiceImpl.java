@@ -22,4 +22,20 @@ public class ChangeMoneyServiceImpl implements ChangeMoneyService {
     public int addChangeMoney(ChangeMoney changeMoney) {
         return changeMoneyMapper.addChangeMoney(changeMoney);
     }
+
+
+    @Override
+    public ChangeMoney selectChangeMoneyById(Integer id) {
+        return changeMoneyMapper.selectChangeMoneyById(id);
+    }
+
+    @Override
+    public int updateChangeMoney(ChangeMoney changeMoney) {
+        return changeMoneyMapper.updateChangeMoney(changeMoney);
+    }
+
+    @Override
+    public int deleteChangeMoney(Integer id) {
+        return changeMoneyMapper.deleteChangeMoney(id);
+    }
 }

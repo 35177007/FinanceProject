@@ -10,9 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 public class MyInterceptor implements HandlerInterceptor{
     @Override
     public  boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        Object obj = request.getSession().getAttribute("username");
-        obj = true;
-        if(obj != null){
+        Object user = request.getSession().getAttribute("user");
+        Object admin = request.getSession().getAttribute("admin");
+
+        if ((user != null)||(admin != null)){
             return true;
         }else{
 

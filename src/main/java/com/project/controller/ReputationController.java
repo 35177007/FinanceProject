@@ -38,7 +38,7 @@ public class ReputationController {
         model.addAttribute("activeUrl","indexActive");
         model.addAttribute("activeUrl","userInfoActive");
         model.addAttribute("activeUrl2","userInfoActive");
-        model.addAttribute("username","username");
+
 
         return "admin/userinfo/reputation";
 

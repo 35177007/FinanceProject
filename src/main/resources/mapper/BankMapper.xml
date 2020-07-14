@@ -3,8 +3,20 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.project.mapper.UserBankMapper">
+<mapper namespace="com.project.mapper.BankMapper">
     <select id="selectBankAll" resultType="com.project.pojo.Bank">
-        select name,type,assets,bankDesc from bank;
+        select * from bank
     </select>
+    <insert id="addBank" parameterType="com.project.pojo.Bank">
+       insert into bank(name,type,assets,bankDesc) values(#{name},#{type},#{assets},#{bankDesc})
+    </insert>
+    <delete id="deleteBank" parameterType="Integer">
+        delete from bank where id = #{id}
+    </delete>
+    <select id="selectBankById" parameterType="Integer" resultType="com.project.pojo.Bank">
+        select * from bank where id = #{id}
+    </select>
+    <update id="updateBank" parameterType="com.project.pojo.Bank">
+        update bank set name = #{name} , type = #{type} , assets = #{assets} , bankDesc = #{bankDesc} where id = #{id}
+    </update>
 </mapper>
