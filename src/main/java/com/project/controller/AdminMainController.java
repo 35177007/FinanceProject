@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class AdminMain {
+public class AdminMainController {
     @RequestMapping("admin/main")
     public String adminHome(Model model){
         model.addAttribute("activeUrl","indexActive");
