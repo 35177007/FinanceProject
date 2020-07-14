@@ -11,9 +11,8 @@ public class MyInterceptor implements HandlerInterceptor{
     @Override
     public  boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Object obj = request.getSession().getAttribute("username");
-        Object obj1;
-        obj1 = null;
-        if(obj1 != null){
+        obj = true;
+        if(obj != null){
             return true;
         }else{
 
