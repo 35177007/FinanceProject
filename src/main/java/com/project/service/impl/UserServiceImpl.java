@@ -33,11 +33,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public int setPwd(User user) {
+        return userMapper.setPwd(user);
+    }
+
+    @Override
     public int updateUserById(User user) {
         return userMapper.updateUserById(user);
     }
 
 
+    @Override
     public int deleteUser(Integer id){
         return userMapper.deleteUser(id);
     }

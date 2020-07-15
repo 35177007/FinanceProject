@@ -18,6 +18,6 @@ public interface UserMapper {
     public int updateUser(User user);
     public int updateUserById(User user);
 
-
+    public int setPwd(User user);
     public int deleteUser(Integer id);
 }

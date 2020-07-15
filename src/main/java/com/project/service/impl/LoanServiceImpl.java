@@ -26,4 +26,14 @@ public class LoanServiceImpl implements LoanService {
     public int notPassapplyStatus(Loan loan) {
         return loanMapper.notPassapplyStatus(loan);
     }
+
+    @Override
+    public List<Loan> selectLoanById(Integer id) {
+        return loanMapper.selectLoanById(id);
+    }
+
+    @Override
+    public int repayLoan(Integer id) {
+        return loanMapper.repayLoan(id);
+    }
 }

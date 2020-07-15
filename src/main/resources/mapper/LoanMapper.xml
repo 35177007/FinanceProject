@@ -13,4 +13,10 @@
     <update id="notPassapplyStatus" parameterType="com.project.pojo.Loan">
         update loan set examineId=#{examineId},applyStatus=1 where id=#{id}
     </update>
+    <select id="selectLoanById" resultType="com.project.pojo.Loan" parameterType="Integer">
+        select username,reputation,term,amount,loan.id id,loanTime,applyStatus,loanStatus,loanId,rate,examineId from user,loan where user.id=loanId and loanId=#{id}
+    </select>
+    <update id="repayLoan" parameterType="Integer">
+        update loan set loanStatus=2 where id=#{id}
+    </update>
 </mapper>
