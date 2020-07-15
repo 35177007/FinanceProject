@@ -120,8 +120,8 @@ public class Loan {
         this.reputation = reputation;
     }
 
-    public Loan(Integer id, Integer loanId, Integer examineId, Date loanTime, Float amount, Integer term, Float rate, Integer applyStatus, Integer loanStatus, String username, String reputation) {
-        this.id = id;
+    public Loan(Integer loanId, Integer examineId, Date loanTime, Float amount, Integer term, Float rate, Integer applyStatus, Integer loanStatus, String username, String reputation) {
+
         this.loanId = loanId;
         this.examineId = examineId;
         this.loanTime = loanTime;

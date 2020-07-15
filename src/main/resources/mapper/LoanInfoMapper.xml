@@ -10,4 +10,5 @@
     <insert id="insertLoadInfo" parameterType="com.project.pojo.Info">
         insert into info(sendId,receiveId,title,createTime,infoDesc,status) values (#{sendId},#{receiveId},#{title},#{createTime},#{infoDesc},#{status})
     </insert>
+
 </mapper>

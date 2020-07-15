@@ -7,4 +7,5 @@ import java.util.List;
 public interface LoanInfoService {
     public List<com.project.pojo.LoanInfo> selectLoanInfoAll();
     public int insertLoadInfo(Info info);
+
 }

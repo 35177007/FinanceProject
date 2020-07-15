@@ -21,4 +21,6 @@ public class LoanInfoServiceImpl implements LoanInfoService {
     public int insertLoadInfo(Info info) {
         return loanInfoMapper.insertLoadInfo(info);
     }
+
+
 }

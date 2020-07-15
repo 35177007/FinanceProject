@@ -9,4 +9,5 @@ import java.util.List;
 public interface LoanInfoMapper {
     public List<LoanInfo> selectLoanInfoAll();
     public int insertLoadInfo(Info info);
+
 }

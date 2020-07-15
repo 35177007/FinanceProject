@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.UserChangeMapper">
+    <select id="selectUserChangeAll" resultType="com.project.pojo.ChangeMoney">
+        select * from change_money
+    </select>
+    <select id="selectUserChangeById" parameterType="Integer" resultType="com.project.pojo.ChangeMoney">
+        select * from change_money where id = #{id}
+    </select>
+    <insert id="insertFlowOfFund" parameterType="com.project.pojo.FlowOfFunds">
+        insert into flow_of_funds(userId,flowMoney,type,source,createTime,fundDesc) values (#{userId},#{flowMoney},#{type},#{source},#{createTime},#{fundDesc})
+    </insert>
+    <insert id="insertUserChange" parameterType="com.project.pojo.UserChangeInfo">
+        insert into user_change_money(userId,changeId,startTime,averYield,profit,status) values (#{userId},#{changeId},#{startTime},#{averYield},#{profit},#{status})
+    </insert>
+</mapper>

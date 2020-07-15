@@ -19,4 +19,7 @@
     <update id="updateUser" parameterType="com.project.pojo.User">
         update user set password = #{password} , email = #{email} , phone = #{phone} , realname = #{realname} where id = #{id}
     </update>
+    <update id="updateUserById" parameterType="com.project.pojo.User">
+        update user set  paypwd = #{paypwd} ,IDcard= #{IDcard}, email = #{email} , phone = #{phone} , realname = #{realname} where id = #{id}
+    </update>
 </mapper>

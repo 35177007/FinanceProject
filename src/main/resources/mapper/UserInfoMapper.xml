@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.UserInfoMapper">
+    <select id="selectUserInfo" resultType="com.project.pojo.UserInfo" parameterType="Integer">
+        select info.id id,sendId,receiveId,title,createTime,infoDesc,info.status status,admin.id adminId,username from admin,info where admin.id=sendId and receiveId=#{id}
+    </select>
+    <update id="updateInfo" parameterType="Integer">
+        update info set status=1 where id=#{id}
+    </update>
+    <delete id="userDeleteInfo" parameterType="Integer">
+        delete from info where id=#{id}
+    </delete>
+</mapper>

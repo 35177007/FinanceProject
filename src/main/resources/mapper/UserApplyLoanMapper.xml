@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.UserApplyLoanMapper">
+    <insert id="applyLoan" parameterType="com.project.pojo.Loan">
+        insert into loan(loanId,examineId,loanTime,amount,term,rate,applyStatus,loanStatus) values (#{loanId},#{examineId},#{loanTime},#{amount},#{term},#{rate},#{applyStatus},#{loanStatus})
+    </insert>
+</mapper>

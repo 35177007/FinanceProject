@@ -49,9 +49,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label>身份证号</label>
-                                        <input type="text" class="form-control" name="idcard"
-                                               id="idcard" placeholder="您的身份证号码还未填写"
-                                               th:value="${user.idcard}">
+                                        <input type="text" class="form-control" name="IDcard"
+                                               id="IDcard" placeholder="您的身份证号码还未填写"
+                                               th:value="${user.IDcard}">
                                         <span class="help-block"></span>
                                     </div>
                                     <div class="form-group">
@@ -102,12 +102,12 @@
 
     $(function () {
         $("#realname").blur(checkRealname);
-        $("#idcard").blur(checkIdCard);
+        $("#IDcard").blur(checkIDcard);
         $("#paypwd").blur(checkPaypwd);
         $("#phone").blur(checkPhone);
         $("#email").blur(checkEmail);
         $("#updateUserBtn").mousedown(function () {
-            if (checkRealname() && checkIdCard() && checkPaypwd() && checkPhone() && checkEmail()) {
+            if (checkRealname() && checkIDcard() && checkPaypwd() && checkPhone() && checkEmail()) {
                 updateUser();
             }
         });
@@ -131,19 +131,19 @@
     }
 
     //校验用户身份证号
-    function checkIdCard() {
-        var idcard = $("#idcard").val();
-        if (idcard.length === 0) {
-            show_validate_msg("#idcard", "error", "Hello！这里还没填呢");
+    function checkIDcard() {
+        var IDcard = $("#IDcard").val();
+        if (IDcard.length === 0) {
+            show_validate_msg("#IDcard", "error", "Hello！这里还没填呢");
             return false;
         }
         //匹配身份证号
-        var idcardReg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
-        if (idcardReg.test(idcard) === false) {
-            show_validate_msg("#idcard", "error", "我猜宁这身份证号也不对呐");
+        var IDcardReg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+        if (IDcardReg.test(IDcard) === false) {
+            show_validate_msg("#IDcard", "error", "我猜宁这身份证号也不对呐");
             return false;
         }
-        show_validate_msg("#idcard", "success", "宁这身份证号真不错");
+        show_validate_msg("#IDcard", "success", "宁这身份证号真不错");
         return true;
     }
 
@@ -200,7 +200,7 @@
 
     //更新用户信息
     function updateUser() {
-        var userId = [[${session.loginUser.id}]];
+        var userId = [[${session.user.id}]];
         $.ajax({
             url: "/user/updateUserProfile/" + userId,
             type: "PUT",
@@ -209,7 +209,9 @@
                 if (result.code === 100) {
                     $.alert('个人信息修改成功！');
                     setTimeout(function () {
-                        location.href = "/user/personal/toProfile.html";
+                        var myDate=new Date();
+                        var hrefs = "/user/personal/toProfile?i="+myDate.getTime();
+                        location.href = "/user/personal/toProfile";
                     }, 1000);
                 } else {
                     $.alert('抱歉！哪里好像出现了问题？');

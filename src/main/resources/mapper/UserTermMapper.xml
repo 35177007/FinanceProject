@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.UserTermMapper">
+    <select id="selectUserTermAll" resultType="com.project.pojo.TermFinancial">
+        select * from term_financial
+    </select>
+    <select id="selectUserTermById" parameterType="Integer" resultType="com.project.pojo.TermFinancial">
+        select * from term_financial where id = #{id}
+    </select>
+    <insert id="insertFlowOfFund" parameterType="com.project.pojo.FlowOfFunds">
+        insert into flow_of_funds(userId,flowMoney,type,source,createTime,fundDesc) values (#{userId},#{flowMoney},#{type},#{source},#{createTime},#{fundDesc})
+    </insert>
+    <insert id="insertUserTerm" parameterType="com.project.pojo.UserTermInfo">
+        insert into user_term_financial(userId,termId,startTime,averYield,profit,status) values (#{userId},#{termId},#{startTime},#{averYield},#{profit},#{status})
+    </insert>
+</mapper>
