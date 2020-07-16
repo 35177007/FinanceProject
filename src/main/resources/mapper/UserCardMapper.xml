@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.UserCardMapper">
+    <select id="selectCardAll" parameterType="Integer" resultType="com.project.pojo.BankCard">
+        select id,cardBank,type,cardNum,userId from bankcard where userId = #{id}
+    </select>
+    <insert id="addCard" parameterType="com.project.pojo.BankCard">
+       insert into bankcard(cardBank,type,cardNum,userId) values(#{cardBank},#{type},#{cardNum},#{userId})
+    </insert>
+    <delete id="deleteCardById" parameterType="Integer">
+        delete from bankcard where id = #{id}
+    </delete>
+    <select id="selectCardById" parameterType="Integer" resultType="com.project.pojo.BankCard">
+        select * from bankcard where id = #{id};
+    </select>
+
+    <update id="updateCard" parameterType="com.project.pojo.BankCard" >
+        update bankcard set cardBank = #{cardBank},type = #{type},cardnum = #{cardNum} where id = #{id}
+    </update>
+</mapper>

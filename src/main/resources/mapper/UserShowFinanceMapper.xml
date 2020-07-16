@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.UserShowFinanceMapper">
+    <select id="selectUserChange" resultType="com.project.pojo.UserShowChange" parameterType="Integer">
+        select user_change_money.id id,userId,changeId,startTime,averYield,profit,status,name,invesMoney,invesTerm from user_change_money,change_money where changeId = change_money.id and userId=#{id}
+    </select>
+    <select id="selectUserFund" resultType="com.project.pojo.UserShowFund" parameterType="Integer">
+        select user_fund_product.id id,userId,fundId,startTime,averYield,profit,status,fundDesc,dailyGrowth,leastMoney,invesTerm from user_fund_product,fund_product where fundId = fund_product.id and userId=#{id}
+    </select>
+    <select id="selectUserPay" resultType="com.project.pojo.UserShowPay" parameterType="Integer">
+        select user_pay_money.id id,userId,payId,startTime,averYield,profit,status,monthMoney,type,invesTerm from user_pay_money,pay_money where payId = pay_money.id and userId=#{id}
+    </select>
+    <select id="selectUserTerm" resultType="com.project.pojo.UserShowTerm" parameterType="Integer">
+        select user_term_financial.id id,userId,termId,startTime,averYield,user_term_financial.profit profit,status,name,leastMoney,invesTerm from user_term_financial,term_financial where termId = term_financial.id and userId=#{id}
+    </select>
+    <update id="removeUserPay" parameterType="Integer">
+        update user_pay_money set status = 3 where id=#{id}
+    </update>
+    <update id="removeUserTerm" parameterType="Integer">
+        update user_term_financial set status = 3 where id=#{id}
+    </update>
+    <update id="removeUserChange" parameterType="Integer">
+        update user_change_money set status = 3 where id=#{id}
+    </update>
+    <update id="removeUserFund" parameterType="Integer">
+        update user_fund_product set status = 3 where id=#{id}
+    </update>
+</mapper>
