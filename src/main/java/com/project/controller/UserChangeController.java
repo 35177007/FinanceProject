@@ -36,8 +36,8 @@ public class UserChangeController {
         model.addAttribute("finacnePageInfo",finacnePageInfo);
         model.addAttribute("changeMoneyList",changeMoneyList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
+        model.addAttribute("activeUrl1","financeActive");
+        model.addAttribute("activeUrl2","changemoneyActive");
 
 
         return "user/finance/changemoney";
@@ -61,12 +61,10 @@ public class UserChangeController {
         String name = changeMoney.getName();
         String desc = "无";
         FlowOfFunds flowOfFunds = new FlowOfFunds(null,userId,money,1,name,sqlDate,desc);
-        System.out.println(flowOfFunds);
         int i = userChangeService.insertFlowOfFund(flowOfFunds);
         BigDecimal averYield = changeMoney.getAnnualIncome();
-        BigDecimal profit = changeMoney.getPeiIncome();
+        BigDecimal profit = money.multiply(averYield);
         UserChangeInfo userChangeInfo = new UserChangeInfo(null,userId,changeMoneyId,sqlDate,averYield,profit,1);
-        System.out.println(userChangeInfo);
         int j = userChangeService.insertUserChange(userChangeInfo);
         if(i == 1&&j == 1){
             return Msg.success();

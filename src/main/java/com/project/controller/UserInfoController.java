@@ -30,16 +30,14 @@ public class UserInfoController {
 
         User user = (User)request.getSession().getAttribute("user");
         Integer userId = user.getId();
-        List<UserInfo> userInfos = userInfoService.selectUserInfo(userId);
         PageHelper.startPage(pageNum,pageSize);
+        List<UserInfo> userInfos = userInfoService.selectUserInfo(userId);
+
 
         //PageInfo封装分页信息
         PageInfo<UserInfo> pageInfo = new PageInfo<UserInfo>(userInfos);
         model.addAttribute("infoPageInfo",pageInfo);
         model.addAttribute("infoList",userInfos);
-        model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
         return "user/personal/myinfo";
     }
     @RequestMapping("/user/updateInfo/{infoId}")

@@ -33,8 +33,8 @@ public class BankController {
         model.addAttribute("financePageInfo",pageInfo);
         model.addAttribute("financeList",financeList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","BankInfoActive");
-        model.addAttribute("activeUrl2","BankInfoActive");
+        model.addAttribute("activeUrl1","financeActive");
+        model.addAttribute("activeUrl2","bankctive");
 
         return "admin/finance/bank";
     }

@@ -35,9 +35,6 @@ public class AdminMainController {
         model.addAttribute("userPageInfo",pageInfo);
         model.addAttribute("userList",userList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
-
 
         return "admin/main";
     }

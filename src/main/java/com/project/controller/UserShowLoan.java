@@ -35,8 +35,8 @@ public class UserShowLoan {
         model.addAttribute("myLoansPageInfo",pageInfo);
         model.addAttribute("loansList",loans);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
+        model.addAttribute("activeUrl1","myFinanceActive");
+        model.addAttribute("activeUrl2","myLoanActive");
         return "user/personal/myloan";
     }
     @RequestMapping("/user/repayment/{id}")

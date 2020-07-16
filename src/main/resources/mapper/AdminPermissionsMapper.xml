@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.AdminPermissionsMapper">
+    <select id="selectAdminPermissionsById" resultType="com.project.pojo.AdminPermissions">
+            select * from admin_permissions,permissions where permissions.id = permissionid and adminId = #{adminId}
+    </select>
+
+    <select id="selectPermissionId" parameterType="String" resultType="Integer">
+        select id from permissions where permission = #{permission}
+    </select>
+
+    <delete id="deleteAdminPermissionsAll" parameterType="Integer">
+        delete from admin_permissions where adminId = #{adminId}
+    </delete>
+
+    <insert id="insertAdminPermissions" parameterType="com.project.pojo.AdminPermissions">
+        insert into admin_permissions(adminId,permissionId) value (#{adminId},#{permissionId})
+    </insert>
+</mapper>

@@ -37,8 +37,8 @@ public class UserTermController {
         model.addAttribute("finacnePageInfo",finacnePageInfo);
         model.addAttribute("termFinancialList",termFinancialList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
+        model.addAttribute("activeUrl1","financeActive");
+        model.addAttribute("activeUrl2","termFinancialActive");
 
 
         return "user/finance/termfinancial";
@@ -62,12 +62,12 @@ public class UserTermController {
         String name = termFinancial.getName();
         String desc = "无";
         FlowOfFunds flowOfFunds = new FlowOfFunds(null,userId,money,1,name,sqlDate,desc);
-        System.out.println(flowOfFunds);
+
         int i = userTermService.insertFlowOfFund(flowOfFunds);
         BigDecimal averYield = termFinancial.getAnnualIncome();
         BigDecimal profit = money.multiply(averYield);
         UserTermInfo userTermInfo = new UserTermInfo(null,userId,termFinancialId,sqlDate,averYield,profit,1);
-        System.out.println(userTermInfo);
+
         int j = userTermService.insertUserTerm(userTermInfo);
         if(i == 1&&j == 1){
             return Msg.success();

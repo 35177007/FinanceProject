@@ -14,7 +14,7 @@
         delete from bankcard where id = #{id}
     </delete>
     <select id="selectCardById" parameterType="Integer" resultType="com.project.pojo.BankCard">
-        select * from bankcard where id = #{id};
+        select * from bankcard where id = #{id}
     </select>
 
     <update id="updateCard" parameterType="com.project.pojo.BankCard" >

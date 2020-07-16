@@ -45,8 +45,8 @@ public class LoanInfoController {
         model.addAttribute("loanPageInfo",loanPageInfo);
         model.addAttribute("loanList",loanInfos);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
+        model.addAttribute("activeUrl1","loanActive");
+        model.addAttribute("activeUrl2","loaninfoActive");
 
 
         return "admin/loan/loaninfo";

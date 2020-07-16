@@ -20,11 +20,11 @@ public class UserBankController {
     public String selectBankAll(Model model){
 
         List<Bank> bankList = userBankService.selectBankAll();
-        //PageInfo封装分页信息
+
         model.addAttribute("bankList",bankList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
+        model.addAttribute("activeUrl1","personalActive");
+        model.addAttribute("activeUrl2","bankActive");
 
         return "user/finance/bank";
     }

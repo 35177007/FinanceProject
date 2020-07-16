@@ -39,8 +39,8 @@ public class UserPayController {
         model.addAttribute("finacnePageInfo",finacnePageInfo);
         model.addAttribute("payMoneyList",payMoneyList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
+        model.addAttribute("activeUrl1","financeActive");
+        model.addAttribute("activeUrl2","payMoneyActive");
 
 
         return "user/finance/paymoney";
@@ -70,12 +70,12 @@ public class UserPayController {
             status = "国债";
         }
         FlowOfFunds flowOfFunds = new FlowOfFunds(null,userId,money,1,name,sqlDate,status);
-        System.out.println(flowOfFunds);
+
         int i = userPayService.insertFlowOfFund(flowOfFunds);
         BigDecimal averYield = new BigDecimal(0.03123);
         BigDecimal profit = money.multiply(averYield);
         UserPayInfo userPayInfo = new UserPayInfo(null,userId,payMoneyId,sqlDate,averYield,profit,1);
-        System.out.println(userPayInfo);
+
         int j = userPayService.insertUserPay(userPayInfo);
         if(i == 1&&j == 1){
             return Msg.success();

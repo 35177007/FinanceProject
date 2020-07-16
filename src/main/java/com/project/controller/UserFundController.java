@@ -37,8 +37,8 @@ public class UserFundController {
         model.addAttribute("finacnePageInfo",finacnePageInfo);
         model.addAttribute("fundProductList",fundProductList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
+        model.addAttribute("activeUrl1","financeActive");
+        model.addAttribute("activeUrl2","fundProductActive");
 
 
         return "user/finance/fundproduct";

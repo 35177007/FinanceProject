@@ -34,9 +34,9 @@ public class PayMoneyController {
         model.addAttribute("finacnePageInfo",finacnePageInfo);
         model.addAttribute("financeList",payMoneyList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
-        model.addAttribute("username", "username");
+        model.addAttribute("activeUrl1","financeActive");
+        model.addAttribute("activeUrl2","paymoneyActive");
+
 
         return "admin/finance/paymoney";
 

@@ -35,8 +35,8 @@ public class BankCardController {
        model.addAttribute("bankcardPageInfo",bankCardPageInfo);
        model.addAttribute("bankcardList",bankcardList);
        model.addAttribute("activeUrl","indexActive");
-       model.addAttribute("activeUrl","userInfoActive");
-       model.addAttribute("activeUrl2","userInfoActive");
+       model.addAttribute("activeUrl1","userInfoActive");
+       model.addAttribute("activeUrl2","bankcardActive");
 
 
        return "admin/userinfo/bankcard";

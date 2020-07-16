@@ -36,7 +36,7 @@ public class UserController {
         model.addAttribute("userPageInfo",pageInfo);
         model.addAttribute("list",list);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
+        model.addAttribute("activeUrl1","userInfoActive");
         model.addAttribute("activeUrl2","userInfoActive");
 
 

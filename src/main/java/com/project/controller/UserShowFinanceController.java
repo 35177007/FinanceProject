@@ -32,14 +32,18 @@ public class UserShowFinanceController {
         model.addAttribute("userPayMoneyList",userShowPays);
         model.addAttribute("userTermFinancialList",userShowTerms);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
+        model.addAttribute("activeUrl1","personalActive");
+        model.addAttribute("activeUrl2","myFinanceActive");
+        if(request.getSession().getAttribute("myFinanceActiveUrl")==null){
+            request.getSession().setAttribute("myFinanceActiveUrl","changeMoneyActive");
+        }
         return "user/personal/myfinance";
     }
     @RequestMapping("/user/revokeUserChangeMoney")
     @ResponseBody
-    public Msg removeChange(@RequestParam(value = "userChangeMoneyId") Integer id){
+    public Msg removeChange(@RequestParam(value = "userChangeMoneyId") Integer id,HttpServletRequest request){
         int i = userSHowFinanceService.removeUserChange(id);
+        request.getSession().setAttribute("myFinanceActiveUrl","changeMoneyActive");
         if(i == 1){
             return Msg.success();
         }else {
@@ -48,8 +52,9 @@ public class UserShowFinanceController {
     }
     @RequestMapping("/user/revokeUserPayMoney")
     @ResponseBody
-    public Msg removePay(@RequestParam(value = "userPayMoneyId") Integer id){
+    public Msg removePay(@RequestParam(value = "userPayMoneyId") Integer id,HttpServletRequest request){
         int i = userSHowFinanceService.removeUserPay(id);
+        request.getSession().setAttribute("myFinanceActiveUrl","payMoneyActive");
         if(i == 1){
             return Msg.success();
         }else {
@@ -58,8 +63,9 @@ public class UserShowFinanceController {
     }
     @RequestMapping("/user/revokeUserTermFinancial")
     @ResponseBody
-    public Msg removeTerm(@RequestParam(value = "userTermFinancialId") Integer id){
+    public Msg removeTerm(@RequestParam(value = "userTermFinancialId") Integer id,HttpServletRequest request){
         int i = userSHowFinanceService.removeUserTerm(id);
+        request.getSession().setAttribute("myFinanceActiveUrl","termFinancialActive");
         if(i == 1){
             return Msg.success();
         }else {
@@ -68,8 +74,9 @@ public class UserShowFinanceController {
     }
     @RequestMapping("/user/revokeUserFundProduct")
     @ResponseBody
-    public Msg removeFund(@RequestParam(value = "userFundProductId") Integer id){
+    public Msg removeFund(@RequestParam(value = "userFundProductId") Integer id,HttpServletRequest request){
         int i = userSHowFinanceService.removeUserFund(id);
+        request.getSession().setAttribute("myFinanceActiveUrl","fundProductActive");
         if(i == 1){
             return Msg.success();
         }else {

@@ -6,6 +6,9 @@ import com.project.pojo.Admin;
 import com.project.pojo.User;
 import com.project.service.LoginService;
 import com.project.service.impl.LoginServiceImpl;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,6 +53,9 @@ public class LoginController {
     @ResponseBody
     public Msg adminOrUserLogin(@RequestParam("username") String username,@RequestParam("password") String password,HttpServletRequest request)
     {
+        Subject subject = SecurityUtils.getSubject();
+        UsernamePasswordToken token = new UsernamePasswordToken(username,password);
+        subject.login(token);
         Admin admin = new Admin();
         admin.setUsername(username);
         admin.setPassword(password);
@@ -71,5 +77,11 @@ public class LoginController {
         return Msg.fail();
     }
 
+    @RequestMapping("/noauth")
+    public String noauthMain(){
+
+
+        return "noauth";
+    }
 
 }

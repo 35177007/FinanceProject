@@ -17,8 +17,10 @@ public class UserSecurityController {
     @Autowired
     private UserServiceImpl userService;
     @RequestMapping("/user/personal/toSecurity")
-    public String showSecurity(){
-
+    public String showSecurity(Model model){
+        model.addAttribute("activeUrl","indexActive");
+        model.addAttribute("activeUrl1","personalActive");
+        model.addAttribute("activeUrl2","securityActive");
         return "user/personal/security";
     }
     @RequestMapping("/user/updatePwd")

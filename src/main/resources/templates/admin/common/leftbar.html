@@ -52,9 +52,9 @@
                 ><a href="javascript:void(0)"><i class="mdi mdi-key-change"></i>权限管理</a>
                     <ul class="nav nav-subnav">
                         <li shiro:hasPermission="admin:userPermissions" th:class="${activeUrl2=='userPermissionsActive'?'active':''}"><a
-                                th:href="@{/admin/permission/toUserPermissions.html}">用户权限</a></li>
+                                th:href="@{/admin/permission/toUserPermissions}">用户权限</a></li>
                         <li shiro:hasPermission="admin:adminPermissions" th:class="${activeUrl2=='adminPermissionsActive'?'active':''}"><a
-                                th:href="@{/admin/permission/toAdminPermissions.html}">管理员权限</a></li>
+                                th:href="@{/admin/permission/toAdminPermissions}">管理员权限</a></li>
                     </ul>
                 </li>
                 <li shiro:hasPermission="admin:loan" class="nav-item nav-item-has-subnav"

@@ -23,6 +23,9 @@
         update user set  paypwd = #{paypwd} ,IDcard= #{IDcard}, email = #{email} , phone = #{phone} , realname = #{realname} where id = #{id}
     </update>
     <update id="setPwd" parameterType="com.project.pojo.User">
-        update user set  password=#{password}  where id=#{id};
+        update user set  password=#{password}  where id=#{id}
     </update>
+    <select id="selectUserByTerms" parameterType="String" resultType="com.project.pojo.User">
+        select * from user where username = #{username}
+    </select>
 </mapper>

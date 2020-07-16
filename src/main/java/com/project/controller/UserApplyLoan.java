@@ -8,6 +8,7 @@ import com.project.pojo.User;
 import com.project.service.impl.UserApplyLoanServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,13 +22,16 @@ public class UserApplyLoan {
     private UserApplyLoanServiceImpl userApplyLoanService;
 
     @RequestMapping("/user/tools/toApplyLoan")
-    public String show(){
+    public String show(Model model){
+        model.addAttribute("activeUrl","indexActive");
+        model.addAttribute("activeUrl1","toolsActive");
+        model.addAttribute("activeUrl2","applyLoanActive");
         return "user/tools/applyloan";
     }
 
     @RequestMapping("/user/applyLoan")
     @ResponseBody
-    public Msg adminOrUserLogin(@RequestParam("amount") Float amount, @RequestParam("term") Integer term,@RequestParam("rate") Float rate, HttpServletRequest request) {
+    public Msg adminOrUserLogin(@RequestParam("amount") Double amount, @RequestParam("term") Integer term,@RequestParam("rate") Double rate, HttpServletRequest request) {
         User user = (User)request.getSession().getAttribute("user");
         Integer userId = user.getId();
         Date utilDate  =new Date();

@@ -34,9 +34,9 @@ public class TermFinancialController {
         model.addAttribute("finacnePageInfo",finacnePageInfo);
         model.addAttribute("financeList",termFinancialList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
-        model.addAttribute("username", "username");
+        model.addAttribute("activeUrl1","financeActive");
+        model.addAttribute("activeUrl2","termfinancialActive");
+
 
         return "admin/finance/termfinancial";
 

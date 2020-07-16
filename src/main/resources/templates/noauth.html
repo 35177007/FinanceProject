@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <title>500界面</title>
+    <title>权限受限界面</title>
     <!-- 引入bootstrap样式 -->
     <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
     <!--图标库-->
@@ -43,8 +43,8 @@
 <section class="error-page">
     <div class="error-box">
         <div class="error-body text-center">
-            <h1>500</h1>
-            <h4>很抱歉，但是那个页面看起来已经不存在了。</h4>
+            <h1>402</h1>
+            <h4>很抱歉，你没有权限查看此页面。</h4>
             <a th:href="@{/}"
                class="btn btn-primary ">返回首页</a>
         </div>

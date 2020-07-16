@@ -23,8 +23,7 @@ public class UserMainController {
         //PageInfo封装分页信息
         model.addAttribute("newsList",newsList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
+
 
 
         return "user/main";

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.UserPermissionsMapper">
+    <select id="selectUserPermissionsById" resultType="com.project.pojo.UserPermissions">
+            select * from user_permissions,permissions where permissions.id = permissionid and userId = #{userId}
+    </select>
+
+    <select id="selectPermissionIdWithUser" parameterType="String" resultType="Integer">
+        select id from permissions where permission = #{permission}
+    </select>
+
+    <delete id="deleteUserPermissionsAll" parameterType="Integer">
+        delete from user_permissions where userId = #{userId}
+    </delete>
+
+    <insert id="insertUserPermissions" parameterType="com.project.pojo.UserPermissions">
+        insert into user_permissions(userId,permissionId) value (#{userId},#{permissionId})
+    </insert>
+</mapper>

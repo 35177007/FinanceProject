@@ -7,9 +7,9 @@ public class Loan {
     private Integer loanId;
     private Integer examineId;
     private Date loanTime;
-    private Float amount;
+    private Double amount;
     private Integer term;
-    private Float rate;
+    private Double rate;
     private Integer applyStatus;
     private Integer loanStatus;
     private String username;
@@ -64,11 +64,11 @@ public class Loan {
         this.loanTime = loanTime;
     }
 
-    public Float getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(Float amount) {
+    public void setAmount(Double  amount) {
         this.amount = amount;
     }
 
@@ -80,11 +80,11 @@ public class Loan {
         this.term = term;
     }
 
-    public Float getRate() {
+    public Double getRate() {
         return rate;
     }
 
-    public void setRate(Float rate) {
+    public void setRate(Double rate) {
         this.rate = rate;
     }
 
@@ -120,7 +120,7 @@ public class Loan {
         this.reputation = reputation;
     }
 
-    public Loan(Integer loanId, Integer examineId, Date loanTime, Float amount, Integer term, Float rate, Integer applyStatus, Integer loanStatus, String username, String reputation) {
+    public Loan(Integer loanId, Integer examineId, Date loanTime, Double amount, Integer term, Double rate, Integer applyStatus, Integer loanStatus, String username, String reputation) {
 
         this.loanId = loanId;
         this.examineId = examineId;

@@ -36,8 +36,8 @@ public class ChangeMoneyController {
         model.addAttribute("finacnePageInfo",finacnePageInfo);
         model.addAttribute("financeList",changeMoneyList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
+        model.addAttribute("activeUrl1","financeActive");
+        model.addAttribute("activeUrl2","changemoneyActive");
 
 
         return "admin/finance/changemoney";
