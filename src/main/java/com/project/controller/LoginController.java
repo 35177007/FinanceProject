@@ -39,11 +39,11 @@ public class LoginController {
         Admin admin = loginService.selectAdminByUserName(username);
         User user = loginService.selectUserByUserName(username);
         if(admin != null){
-            request.getSession().setAttribute("username",admin.getUsername());
+
             return Msg.success();
         }
         if(user != null){
-            request.getSession().setAttribute("username",user.getUsername());
+
             return Msg.success();
         }
         return Msg.fail();
@@ -53,14 +53,15 @@ public class LoginController {
     @ResponseBody
     public Msg adminOrUserLogin(@RequestParam("username") String username,@RequestParam("password") String password,HttpServletRequest request)
     {
-        Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken(username,password);
-        subject.login(token);
+
         Admin admin = new Admin();
         admin.setUsername(username);
         admin.setPassword(password);
         Admin loginAdmin = loginService.adminLogin(admin);
         if(loginAdmin != null ){
+            Subject subject = SecurityUtils.getSubject();
+            UsernamePasswordToken token = new UsernamePasswordToken(username,password);
+            subject.login(token);
             request.getSession().setAttribute("admin",loginAdmin);
             loginService.setAdminStatus(admin);
             return Msg.success().add("url","/admin/main");
@@ -70,6 +71,9 @@ public class LoginController {
         user.setPassword(password);
         User loginUser = loginService.userLogin(user);
         if(loginUser != null ){
+            Subject subject = SecurityUtils.getSubject();
+            UsernamePasswordToken token = new UsernamePasswordToken(username,password);
+            subject.login(token);
             request.getSession().setAttribute("user",loginUser);
             loginService.setUserStatus(user);
             return Msg.success().add("url","/user/main");
