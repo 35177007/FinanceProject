@@ -88,7 +88,7 @@ public class UserRealm extends AuthorizingRealm {
             Session session = currentSubject.getSession();
             /*user.setStatus(1);
             userService.updateUser(user);*/
-            session.setAttribute("loginUser", user);
+            session.setAttribute("user", user);
             System.out.println("执行了=>认证=>"+user.getUsername()+"登录进入系统");
             return new SimpleAuthenticationInfo(user.getUsername(), user.getPassword(), "");
         }
@@ -100,7 +100,7 @@ public class UserRealm extends AuthorizingRealm {
             Session session = currentSubject.getSession();
           /*  admin.setStatus(1);
             adminMainService.updateAdmin(admin);*/
-            session.setAttribute("loginAdmin", admin);
+            session.setAttribute("admin", admin);
             System.out.println("执行了=>认证=>"+admin.getUsername()+"登录进入系统");
             return new SimpleAuthenticationInfo(admin.getUsername(),admin.getPassword(),"");
         }
