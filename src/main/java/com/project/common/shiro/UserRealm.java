@@ -61,10 +61,7 @@ public class UserRealm extends AuthorizingRealm {
             for (AdminPermissions adminPermissions : list) {
                 System.out.println(adminPermissions);
             }
-            for (AdminPermissions ap:list) {
-                info.addStringPermission(ap.getPermission());
-            }
-
+           
         }
 
         //String currentUserUsername = (String) subject.getPrincipal();
@@ -74,9 +71,7 @@ public class UserRealm extends AuthorizingRealm {
             //SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
             info.addRole("user");
             List<UserPermissions> list = userPermissionsService.selectUserPermissionsById(1);
-            for (UserPermissions userPermissions : list) {
-                System.out.println(userPermissions);
-            }
+
 
             for (UserPermissions up:list) {
                 info.addStringPermission(up.getPermission());
