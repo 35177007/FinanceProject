@@ -38,7 +38,7 @@ public class UserPermissionsController {
         model.addAttribute("pageInfo",pageInfo);
         model.addAttribute("permissionsList",permissionsList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl","permissionActive");
+        model.addAttribute("activeUrl1","permissionActive");
         model.addAttribute("activeUrl2","userPermissionsActive");
 
         return "admin/permission/userpermissions";

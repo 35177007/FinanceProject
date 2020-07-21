@@ -36,8 +36,8 @@ public class UserMoneyHistoryController {
         model.addAttribute("flowOfFundsPageInfo",pageInfo);
         model.addAttribute("flowOfFundsList",userMoneyHistories);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl1","userInfoActive");
-        model.addAttribute("activeUrl2","userInfoActive");
+        model.addAttribute("activeUrl1","toolsActive");
+        model.addAttribute("activeUrl2","recordActive");
 
 
         return "user/tools/record";

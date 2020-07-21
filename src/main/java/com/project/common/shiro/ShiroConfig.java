@@ -35,8 +35,8 @@ public class ShiroConfig {
 
 
         //授权
-       /*filterMap.put("/user/**", "roles[user]");
-       filterMap.put("/admin/**", "roles[admin]");*/
+//       filterMap.put("/user/**", "roles[user]");
+//       filterMap.put("/admin/**", "roles[admin]");
 
        // filterMap.put("/user/finance/**","perms[user:finance]");
         filterMap.put("/user/finance/toChangeMoney","perms[user:changeMoney]");

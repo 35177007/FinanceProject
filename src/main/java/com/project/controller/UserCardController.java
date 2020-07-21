@@ -39,7 +39,7 @@ public class UserCardController {
         model.addAttribute("bankcardPageInfo",bankCardPageInfo);
         model.addAttribute("bankCardList",bankCardList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl1","userInfoActive");
+        model.addAttribute("activeUrl1","personalActive");
         model.addAttribute("activeUrl2","bankCardActive");
 
 

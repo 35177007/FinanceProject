@@ -49,7 +49,7 @@ public class UserRealm extends AuthorizingRealm {
 
         Admin admin = (Admin)subject1.getSession().getAttribute("admin");
         //Subject subject = SecurityUtils.getSubject();
-       // String currentAdminUsername = (String) subject.getPrincipal();
+        // String currentAdminUsername = (String) subject.getPrincipal();
 
         if (flagadmin){
             //SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
@@ -58,10 +58,12 @@ public class UserRealm extends AuthorizingRealm {
             info.addRole("admin");
             info.addRole("user");
             List<AdminPermissions> list = adminPermissionsService.selectAdminPermissionsById(1);
-            for (AdminPermissions adminPermissions : list) {
-                System.out.println(adminPermissions);
+
+            for (AdminPermissions ap:list) {
+                info.addStringPermission(ap.getPermission());
             }
-           
+
+
         }
 
         //String currentUserUsername = (String) subject.getPrincipal();
