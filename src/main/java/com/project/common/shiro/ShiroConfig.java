@@ -93,7 +93,7 @@ public class ShiroConfig {
         //设置登录请求（认证界面）
         bean.setLoginUrl("/");
         //设置未授权页面
-        bean.setUnauthorizedUrl("/noauth");
+        bean.setUnauthorizedUrl("/error/401");
 
         return bean;
     }

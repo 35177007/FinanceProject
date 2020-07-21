@@ -81,11 +81,11 @@ public class LoginController {
         return Msg.fail();
     }
 
-    @RequestMapping("/noauth")
+    @RequestMapping("/error/401")
     public String noauthMain(){
 
 
-        return "noauth";
+        return "error/401";
     }
 
 }

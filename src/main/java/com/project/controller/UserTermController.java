@@ -43,6 +43,7 @@ public class UserTermController {
 
         return "user/finance/termfinancial";
 
+
     }
 
     @RequestMapping("/getUserTermById/{id}")
