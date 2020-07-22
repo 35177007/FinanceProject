@@ -263,6 +263,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .panel-primary>.panel-heading+.panel-collapse>.panel-body {
     border-top-color: #33cabb;
+    background-color:#ecf3f0;
 }
 .panel-primary > .panel-heading .badge {
     color: #33cabb;
@@ -2494,7 +2495,7 @@ dd, dt {
 	height: -webkit-calc(100% - 68px);
 	height: calc(100% - 68px);
     position: relative;
-    background-color: #ECF0F3;
+    background-color: #ecf0f340;
 }
 
 /* 侧边栏开关 */
@@ -2568,7 +2569,7 @@ dd, dt {
     border-color: #33cabb;
 }
 .nav-drawer > li.active > a {
-    background-color: rgba(0,0,0,.0125)!important;
+    background-color: #edf6f8;
 }
 .nav-drawer > .active > a:hover,
 .nav-drawer > .active > a:focus,
@@ -2773,6 +2774,7 @@ dd, dt {
 }
 .card-body {
     padding: 24px 24px;
+    background-color:#ecf3f0;
 }
 .card-header .h4,
 .card-header h4 {
@@ -2780,6 +2782,7 @@ dd, dt {
 }
 .card-header + .card-body {
 	padding-top: 15px;
+    background-color: #ecf3f0;
 }
 .card-header[class*='bg'] .card-actions > li > a:not(.label),
 .card-header[class*='bg'] .card-actions > li > button,
