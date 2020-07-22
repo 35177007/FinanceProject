@@ -23,9 +23,8 @@ public class UserBankController {
 
         model.addAttribute("bankList",bankList);
         model.addAttribute("activeUrl","indexActive");
-        model.addAttribute("activeUrl1","personalActive");
+        model.addAttribute("activeUrl1","financeActive");
         model.addAttribute("activeUrl2","bankActive");
-
         return "user/finance/bank";
     }
 }

@@ -10,14 +10,18 @@ body {
 	line-height: 1.5;
 	font-size: 14px;
 	overflow-x: hidden;
-    background-color: #f5f6fa;
+    background-color: #ECF0F3;
+    background-image: url("/images/yemian.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: auto;
 }
 html,
 body {
     height: 100%;
 }
 a {
-    color: #33cabb;
+    color: #1874CD;
 	-webkit-transition: .2s linear;
 	transition: .2s linear
 }
@@ -251,8 +255,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border-color: #f0f0f0;
 }
 .panel-primary>.panel-heading {
-    background-color: #33cabb;
-    border-color: #33cabb;
+    background-color: #337ab7;
+    border-color: #337ab7;
 }
 .panel-primary {
     border-color: #33cabb;
@@ -644,8 +648,8 @@ input[type=radio] {
 }
 /* checkbox */
 .checkbox-primary input:checked~span::before {
-    background-color: #33cabb;
-    border-color: #33cabb;
+    background-color: #f96197;
+    border-color: #f96197;
 }
 .checkbox-primary input:checked~span::after {
     border-color: #fff;
@@ -1245,8 +1249,8 @@ input[type=radio] {
 .pagination > .active > span,
 .pagination > .active > span:focus,
 .pagination > .active > span:hover {
-    background-color: #33cabb;
-    border-color: #33cabb;
+    background-color: #1874CD;
+    border-color: #1874CD;
 }
 .pagination > .disabled > a,
 .pagination > .disabled > a:focus,
@@ -1369,8 +1373,8 @@ input[type=radio] {
 	opacity: 0.5
 }
 .btn-primary {
-	background-color: #33cabb;
-	border-color: #33cabb;
+	background-color: #1874CD;
+	border-color: #1874CD;
 	color: #fff!important;
 }
 .btn-primary:hover {
@@ -1954,7 +1958,7 @@ fieldset[disabled] .btn-dark:hover {
 
 /* 背景色 */
 .bg-primary {
-	background-color: #33cabb !important;
+	background-color: #337ab7 !important;
 	color: #fff!important;
 }
 .bg-secondary {
@@ -2490,7 +2494,7 @@ dd, dt {
 	height: -webkit-calc(100% - 68px);
 	height: calc(100% - 68px);
     position: relative;
-    background-color: #fff;
+    background-color: #ECF0F3;
 }
 
 /* 侧边栏开关 */
@@ -2538,6 +2542,7 @@ dd, dt {
     height: auto;
     width: 100%;
     text-align: center;
+    background-color: #ECF0F3;
 }
 .sidebar-header a img {
     max-width: 240px;
@@ -2573,7 +2578,7 @@ dd, dt {
 }
 .nav-drawer .nav-subnav > li.active > a,
 .nav-drawer .nav-subnav > li > a:hover {
-    color: #33cabb;
+    color: #1874CD;
     background-color: transparent;
 }
 .nav-drawer > li > a > i {
@@ -2663,6 +2668,7 @@ dd, dt {
     align-items: center;
     min-height: 64px;
     padding: 0 15px;
+    background-color: #ECF0F3;
 }
 .topbar .topbar-left {
     display: -webkit-box;
@@ -2758,6 +2764,7 @@ dd, dt {
 	margin: 0;
 	padding: 15px 24px;
 	border-bottom: 1px solid rgba(77,82,89,0.05);
+    background-color: #ECF0F3;
 }
 .card-header > * {
 	margin: 0;
