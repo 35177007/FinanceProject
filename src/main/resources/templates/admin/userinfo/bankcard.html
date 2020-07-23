@@ -13,6 +13,115 @@
     <link th:href="@{/lyear/jconfirm/jquery-confirm.min.css}" rel="stylesheet" type="text/css"/>
     <!--自定义样式-->
     <link href="../lyear/css/style.min.css" th:href="@{/lyear/css/style.min.css}" rel="stylesheet" type="text/css"/>
+    <style th:inline="text">
+        .row {
+            background-color: transparent;
+        }
+
+        .open > .dropdown-menu {
+            background-color: #ecf0f3;
+            border-radius: 10px;
+        }
+
+        .btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) {
+            zoom: 1;
+            display: inline;
+            vertical-align: baseline;
+            margin: 0 2px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border-radius: .5em;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        }
+
+        .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+            zoom: 1;
+            display: inline;
+            vertical-align: baseline;
+            margin: 0 2px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border-radius: .5em;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        }
+
+        .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+            zoom: 1;
+            display: inline;
+            vertical-align: baseline;
+            margin: 0 2px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border-radius: .5em;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        }
+
+        .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+            zoom: 1;
+            display: inline;
+            vertical-align: baseline;
+            margin: 0 2px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border-radius: .5em;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        }
+
+        .pagination > li:first-child a, .pagination > li:first-child span {
+            zoom: 1;
+            display: inline;
+            vertical-align: baseline;
+            margin: 0 2px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border-radius: .5em;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        }
+
+        .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+            zoom: 1;
+            display: inline;
+            vertical-align: baseline;
+            margin: 0 2px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border-radius: .5em;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        }
+
+        .pagination-lg > li > a, .pagination-lg > li > span {
+            zoom: 1;
+            display: inline;
+            vertical-align: baseline;
+            margin: 0 2px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border-radius: .5em;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        }
+
+        .pagination > li:first-child a, .pagination > li:first-child span {
+            zoom: 1;
+            display: inline;
+            vertical-align: baseline;
+            margin: 0 2px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border-radius: .5em;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        }
+        body > div.jconfirm.jconfirm-light.jconfirm-open > div.jconfirm-scrollpane > div > div > div > div > div {
+            background-color: transparent !important;
+        }
+    </style>
 
 </head>
 <body>
@@ -26,7 +135,7 @@
         <!--页面主要内容-->
         <main class="lyear-layout-content">
             <div class="container-fluid">
-                <div class="row">
+                <div class="row" style="background-color: #ecf3f0">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
@@ -72,9 +181,9 @@
                             </div>
 
                             <!-- 显示分页信息 -->
-                            <div class="row">
+                            <div class="row" style="background-color: #ecf3f0">
 
-                                <div class="col-md-5 col-md-offset-1">
+                                <div class="col-md-6 col-md-offset-0">
                                     <div class="btn-group">
                                         <button class="btn btn-default">
                                             <span>页次：</span>
